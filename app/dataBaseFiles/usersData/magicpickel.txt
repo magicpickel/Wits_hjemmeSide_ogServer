@@ -1,0 +1,1 @@
+a:4:{s:3:"uid";s:11:"magicpickel";s:9:"firstname";s:5:"admin";s:8:"lastname";s:3:"wup";s:4:"date";s:21:"2023-04-24 06:17:48pm";}
