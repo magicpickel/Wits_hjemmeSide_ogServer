@@ -30,3 +30,4 @@ pasword: 123
 username: test 
 
 pasword: test
+![Visualization of the codebase](./diagram.svg)
