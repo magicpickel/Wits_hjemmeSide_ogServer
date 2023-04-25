@@ -18,12 +18,12 @@ jobs:
           excluded_paths: "dist,node_modules"
       - name: Update diagram
         id: make_diagram
-        uses: githubocto/repo-visualizer@0.7.1
+        uses: githubocto/repo-visualizer@0.9.1
         with:
           output_file: "output-diagram.svg"
           artifact_name: "my-diagram"
       - name: Get artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: "my-diagram"
           path: "downloads"  
