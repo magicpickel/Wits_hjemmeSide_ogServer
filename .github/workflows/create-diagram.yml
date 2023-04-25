@@ -16,6 +16,11 @@ jobs:
           output_file: "diagram.svg"
           root_path: "app/"
           excluded_paths: "dist,node_modules"
+      - name: Update diagram
+        id: make_diagram
+        uses: githubocto/repo-visualizer@0.7.1
+        with:
+          output_file: "output-diagram.svg"
           artifact_name: "my-diagram"
       - name: Get artifact
         uses: actions/download-artifact@v2
