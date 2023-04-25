@@ -24,7 +24,6 @@ jobs:
           artifact_name: "my-diagram"
       - name: Get artifact
         uses: actions/download-artifact@v3
-        with:
-          root_path: ""
+        with:         
           name: "my-diagram"
           path: "downloads"  
