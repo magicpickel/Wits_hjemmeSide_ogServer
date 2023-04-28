@@ -1,5 +1,17 @@
 <?php
+/* 
+    
+1. Constructor: receives the path, iid, date and pid as parameters, and assigns them to the class variables.
 
+2. StoreiidData: stores the iid data in a file, using the iid as the file name.
+
+3. StoreImage: stores the image in a file, using the iid as the file name.
+
+4. get_StoreUid_iidData: returns the iid data from the file.
+
+5. sortiid: sorts the iid data array.
+
+6. deleteiidData: deletes the iid data file. */
 
 class imageDB
 {

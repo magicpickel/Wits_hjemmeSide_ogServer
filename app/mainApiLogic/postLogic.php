@@ -1,4 +1,15 @@
 <?php
+/* 
+1. this class is responsible for creating a post object that is stored in the database.
+2. the constructor accepts the following parameters: the user's uid (unique identification), the title of the post, the content of the post, the image url of the post, the date of the post and the pid of the post.
+3. the constructor initializes the post object.
+4. the createPost() function is responsible for creating a new post object in the database.
+5. the createImg() function is responsible for creating a new image object in the database.
+6. the createComment() function is responsible for creating a new comment object in the database.
+7. the Count() function is responsible for counting the number of files in a given folder.
+8. the pidArray is an array that contains the pid, the uid, the title, the content, the date, the iid and the cid of the post.
+9. the postDB is the database of the post object.
+ */
 
 require_once(dirname(__DIR__).'/dataBeseLogic/dataBasePost.php');
 

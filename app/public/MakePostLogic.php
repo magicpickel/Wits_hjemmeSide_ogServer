@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 require_once(dirname(__DIR__) . '/mainApiLogic/postLogic.php');
 require_once(dirname(__DIR__) . '/dataBeseLogic/dataBaseImage.php');
@@ -23,44 +22,51 @@ if (!isset($_SESSION['iidsTp'])) {
 if (!isset($_POST['imgUrl'])) {
     $_POST['imgUrl'] = array();
 }
-$i=count($_POST['imgUrl']);
+$i = count($_POST['imgUrl']);
+/* The code above does the following:
+1. Checks if the session variable for the image url is set.
+2. If not set, set the session variable.
+3. Checks if the session variable for the post id is set.
+4. If not set, set the session variable.
+5. Checks if the session variable for the image id is set.
+6. If not set, set the session variable.
+7. Checks if the post array is empty.
+8. If not empty, set the session variable. */
+
 if ($_SESSION['editPost'] == 'true') {
 
-foreach($_POST['imgUrl'] as $key=>$value){
-    foreach($_SESSION['iidsTp'] as $key2=>$value2){
-        if($value==$value2){
-            unset($_SESSION['iidsTp'][$key2]);
-            sort($_SESSION['iidsTp']);
-            unset($_POST['imgUrl'][$key]);
-            
-            
+    foreach ($_POST['imgUrl'] as $key => $value) {
+        foreach ($_SESSION['iidsTp'] as $key2 => $value2) {
+            if ($value == $value2) {
+                unset($_SESSION['iidsTp'][$key2]);
+                sort($_SESSION['iidsTp']);
+                unset($_POST['imgUrl'][$key]);
+            }
         }
-            
     }
-    
-}
 
-foreach($_SESSION['iidsTp'] as $key3=>$value3){
-    $result=testURlnew($value3,$_SESSION['pid']);
-    if($result !='true'){
-        delete_attachment($_SESSION['pid'],$result);
-        unset($_SESSION['iidsTp'][$key3]); 
+    foreach ($_SESSION['iidsTp'] as $key3 => $value3) {
+        $result = testURlnew($value3, $_SESSION['pid']);
+        if ($result != 'true') {
+            delete_attachment($_SESSION['pid'], $result);
+            unset($_SESSION['iidsTp'][$key3]);
+        }
     }
-   
 }
-    
 
 
-
-}
-foreach($_POST['imgUrl'] as $key4=>$value4){
-    $result=testURlnew($value4,null);
-    if($result !='true'){
-        add_attachment($_SESSION['pid'],$result);
+foreach ($_POST['imgUrl'] as $key4 => $value4) {
+    $result = testURlnew($value4, null);
+    if ($result != 'true') {
+        add_attachment($_SESSION['pid'], $result);
         unset($_POST['imgUrl'][$key4]);
     }
-   
 }
+/* The explanation for the code above:
+1. We check if the user is editing a post or creating a new one. If he is editing a post we check if the images are already attached to the post. If they are, we check if they are still there. 
+If they are not there we delete the attachment from the post and the image from the server. If the image is still there we do nothing.
+
+2. If the user is creating a new post we check if the image is already in the database. If it is we attach it to the post. If it is not we add it to the database and we attach it to the post. */
 
 $_SESSION['titleT'] = $_POST['title'];
 $_SESSION['contentT'] = $_POST['content'];
@@ -86,13 +92,6 @@ if (!isset($_POST['imgUrl'])) {
 $ErrA = array("t" => "", "c" => "", "i" => array());
 $ErrT_F = false;
 
-//1 tjek iid and new img= unset img in array
-
-
-//2 tjek if img exsist on server= add_attachment
-
-
-
 
 
 if (empty($title)) {
@@ -113,7 +112,26 @@ if (empty($content)) {
 
 $tjekker = 0;
 
-$i=$i-count($_POST['imgUrl']);
+$i = $i - count($_POST['imgUrl']);
+
+/* Explanation for the code above:
+1. We start by checking if the title is empty.
+
+2. If it is empty, we put a error message inside the $ErrA array, and set the $ErrT_F to true.
+
+3. If the title is not empty, we test the title with the test_input() function.
+
+4. After testing the title, we check if the title contains any letters, numbers or the characters " - ' ".
+
+5. If it does, we put a error message inside the $ErrA array, and set the $ErrT_F to true.
+
+6. Then we check if the content is empty.
+
+7. If it is empty, we put a error message inside the $ErrA array, and set the $ErrT_F to true.
+
+8. Then we check if the $i is lower than the amount of images inside the $_POST['imgUrl'] array.
+
+9. If it is lower, we put a error message inside the $ErrA array, and set the $ErrT_F to true. */
 
 foreach ($imgAr as $img) {
 
@@ -133,8 +151,8 @@ foreach ($imgAr as $img) {
 
 
             $filename = uniqid() . "." . $extension;
-            if(!isset($extension)){
-                $extension="";
+            if (!isset($extension)) {
+                $extension = "";
             }
 
             if (!preg_match("/jpg|jpeg|png|gif|svg$/", $extension)) {
@@ -165,8 +183,8 @@ foreach ($imgAr as $img) {
                             $ErrT_F = true;
                             $Withimage = false;
                         } else {
-                            // Check file size to ensure that it's not too large
-                            $max_file_size = 5024 * 5024; // 1 MB
+
+                            $max_file_size = 5024 * 5024;
                             $file_size = strlen($image_data);
                             if ($file_size > $max_file_size) {
                                 $ErrA["i"][$i] = "the image file size is too large, maximum size allowed is " . $max_file_size / 1024 . " KB";
@@ -197,12 +215,22 @@ foreach ($imgAr as $img) {
 if ($tjekker == sizeof($imgAr)) {
     $Withimage = true;
 }
-
-
-//(var_dump( $i);
-
+/* The code above does the following:
+1. Checks if the image is empty, if it is, it gets removed from the array.
+2. Checks if the image is a valid URL, if it isn't, it sets an error message.
+3. Checks if the image is a valid file extension, if it isn't, it sets an error message.
+4. Checks if the image is an actual image, if it isn't, it sets an error message.
+5. Checks if the image file size is too large, if it is, it sets an error message.
+6. Checks if the image array is the same length as the total array, if it is, it sets the variable $Withimage to true. */
 
 function test_input($data)
+/* 
+1. The trim() function removes whitespace and other predefined characters from both sides of a string. 
+(The predefined characters are spaces, newlines, and tabs.)
+
+2. The stripslashes() function removes backslashes added by the addslashes() function.
+
+3. The htmlspecialchars() function converts special characters to HTML entities. For example, < becomes &lt;. */
 {
     $data = trim($data);
     $data = stripslashes($data);
@@ -210,6 +238,7 @@ function test_input($data)
     return $data;
 }
 if ($ErrT_F) {
+    //tjek wether or not the $ErrT_F is true or false, if it is true, we serialize the $ErrA array, and send it to the makePost.php page.
     $serializedData = serialize($ErrA);
 
     if (isset($_SESSION['editPost']) && $_SESSION['editPost'] == 'true') {
@@ -221,11 +250,23 @@ if ($ErrT_F) {
     exit();
 }
 if (!$ErrT_F && isset($_SESSION['editPost']) && $_SESSION['editPost'] == 'true') {
+    //tjek wether if the $ErrT_F is empty, and if the $_SESSION['editPost'] is true, if it is, we update the $SamePidOr.
     $SamePidOr = $_SESSION['pid'];
 } else {
     $SamePidOr = "";
 }
+
+
 if (!$ErrT_F) {
+    /* 
+1. First we check if there is any error in the title or content.
+
+2. If there is no error we check if the user upload an image with the post.
+
+3. If the user upload an image we loop over the image array and we create a img for each image.
+
+4. At the end we create a post with the title and content and we redirect the user to the dashboard page. */
+
     $date = date("Y-m-d h:i:sa");
 
     if ($Withimage) {

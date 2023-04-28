@@ -1,6 +1,19 @@
 <?php
+/* The code above does the following:
+
+1. Checks if all the fields are filled out and gives an error message if not
+
+2. Checks if the username is taken and gives an error message if it is
+
+3. Checks if the repeated password matches the password and gives an error message if it doesn't
+
+4. Checks if the first name only contains letters and whitespace and gives an error message if it doesn't
+
+5. Creates a user if everything is correct
+
+6. Redirects the user to the login page with a message if everything is correct */
+
 session_start();
-// define variables and set to empty values
 require_once(dirname(__DIR__) . '/mainApiLogic/userLogic.php');
 date_default_timezone_set('Europe/Copenhagen');
 
@@ -49,7 +62,7 @@ if (empty($password2)) {
     $ErrT_F = true;
 } else {
 
-    // check if username only contains letters and whitespace
+   
     if (!preg_match("/$password2/", $password)) {
         $ErrA["p"] = "Repeated password doesn't match";
         $ErrT_F = true;
@@ -61,7 +74,7 @@ if (empty($firstname)) {
     $ErrT_F = true;
 } else {
     $firstname = test_input($firstname);
-    // check if username only contains letters and whitespace
+   
     if (!preg_match("/^[a-zA-Z-' ]*$/", $firstname)) {
         $ErrA["f"] = "Only letters and white space allowed";
         $ErrT_F = true;

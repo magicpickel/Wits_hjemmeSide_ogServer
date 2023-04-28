@@ -1,4 +1,12 @@
 <?php
+/* 
+1. The constructor takes an array of user data and assigns it to properties of the class.
+
+2. The StorUsrData() method serializes the user data and stores it in a file named after the user id.
+
+3. The get_StorUsrData() method retrieves the data from the file and returns it as an array.
+
+4. The deleteUserData() method deletes the file containing the user data. */
 class UserDB
 {
     private $uid;

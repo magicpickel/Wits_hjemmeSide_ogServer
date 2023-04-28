@@ -1,4 +1,5 @@
 <?php
+
 include dirname(__DIR__).'/dataBeseLogic/dataBaseImage.php';
 include dirname(__DIR__).'/dataBeseLogic/dataBasePost.php';
 include dirname(__DIR__).'/dataBeseLogic/dataBaseUsers.php';

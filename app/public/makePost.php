@@ -53,7 +53,21 @@ if (isset($_SESSION['editPost']) && $_SESSION['editPost'] == 'true') {
 if (isset($_GET["message"])) {
     $ErrArr = unserialize($_GET["message"]);
 }
+/* The code above does the following:
 
+1. Starts the session
+
+2. Checks if user is logged in
+
+3. Checks if the user is editing a post or if the user is making a new post
+
+4. If the user is editing a post, the post is loaded into the session
+
+5. If the user is making a new post, the variable $frontPageV is set to "Make A Post"
+
+6. If the user is editing a post, the variable $frontPageV is set to "Edit post"
+
+7. Checks if there is an error message, if there is, it will be unserialized and put into the variable $ErrArr */
 ?>
 
 <!DOCTYPE html>
@@ -121,6 +135,20 @@ if (isset($_GET["message"])) {
             }
 
         }
+        /* Here is the explanation for the code above:
+1. we create a function called makeImageZones() that will be called when the user clicks on the "Add image" button.
+
+2. Inside the function, we check the loadimgZone variable to see if it is set to true or false. If it is set to false, we set it to true and continue with the code.
+ If it is set to true, we return false and stop the code from executing.
+
+3. We use the jQuery append() method to add the HTML code for the image zone to the #image-zone div element. This code will be executed only once when the user clicks on the "Add image" button.
+
+4. We use the querySelectorAll() method to get all the .alert-del elements and add a click event listener to each of them. When the user clicks on the .alert-del element,
+ we call the remove() method on its parent element to remove the image zone from the document.
+
+5. We set the loadimgZone variable to false to indicate that the code for the image zone has been executed.
+
+6. We call the makeImageZones() function when the user clicks on the "Add image" button. */
     </script>
 
 
@@ -217,5 +245,18 @@ if (isset($_GET["message"])) {
     </form>
 </body>
 
+<!-- Here is the explanation for the code above:
 
+1. The user fills in the form and clicks on the submit button, the form is submitted to the MakePostLogic.php file.
+
+2. The MakePostLogic.php file checks if the form is filled in correctly and if not it redirects the user to the MakePost.php file with a message in the URL.
+
+3. The MakePost.php file checks if there is a message in the URL and if there is it displays a red error message under the input field that has the error.
+
+4. The user can fill in the form again and the process repeats until the form is filled in correctly.
+
+5. If the form is filled in correctly the post is added to the database and the user is redirected to the dashBoard.php file.
+
+6. The dashBoard.php file gets all the posts from the database and displays them on the page.
+ -->
 </html>

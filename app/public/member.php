@@ -1,4 +1,11 @@
 <?php
+/* 
+1. The first code block is the checking if the user has logged in or not. If not, it will redirect to the index page.
+
+2. The second block is the html part, where it has a time function, welcome message, 
+and a continue button. The continue button will redirect to the dashBoard.php page.
+
+3. The last part is the logout button that will redirect to the logout.php page. */
 session_start();
 date_default_timezone_set('Europe/Copenhagen');
 if (!isset($_SESSION['login']) || !$_SESSION['login']) {

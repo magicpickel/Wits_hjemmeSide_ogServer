@@ -7,7 +7,7 @@ if (!isset($_SESSION['offset'])) {
 
 	$ofset = $_SESSION['offset'];
 } else {
-	
+
 	$ofset = $_SESSION['offset'];
 }
 
@@ -38,7 +38,19 @@ require_once(dirname(__DIR__) . '/mainApiLogic/apiHub.php');
 $userS = $_SESSION['user'];
 $trueOR = true;
 //var_dump($_SESSION['editPost']);
+
+/* The code above does the following:
+1. Starts a session
+2. Sets a default timezone for the user
+3. Checks if the offset variable is set, if not it sets it to 5.
+4. Checks if the user is logged in, if not it sets the nonLog variable to false.
+5. Checks if the user is editing a post, if not it unsets all the variables that are used for editing a post.
+6. Includes the apiHub.php file from the mainApiLogic folder.
+7. Sets the userS variable to the session user variable.
+8. Sets the trueOR variable to true. */
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,10 +63,6 @@ $trueOR = true;
 </head>
 
 <body>
-
-
-
-
 	<div class="absolute top-0 right-0 p-4 text-sm text-gray-500">
 		<span id="time"></span>
 		<script>
@@ -79,6 +87,11 @@ $trueOR = true;
 			<br>
 		</h2>
 	</div>
+
+	<!-- The code above does the following:
+1. Creates a time element in the upper right corner of the page, it updates every second.
+2. Creates a link on the front page for the user to make a post if they are logged in. -->
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		var offset = <?php echo $ofset ?>;
@@ -189,6 +202,25 @@ $trueOR = true;
 
 			}
 		}
+		/* Here is the explanation for the code above:
+
+1. The offset variable is used to keep track of how many posts have been loaded so far.
+
+2. The limit variable is used to set the maximum number of posts to load each time the user scrolls to the bottom of the page.
+
+3. The loading variable is used to prevent the loadMore() function from being called multiple times when the user scrolls to the bottom of the page.
+ This variable will be set to true when the loadMore() function is called and set to false when the function has finished.
+
+4. The userS variable is used to store the value of the $_SESSION['username'] variable.
+
+5. The nonLog2 variable is used to determine if the user is logged on or not and will be set to true if the user is not logged on.
+
+6. The loadMore() function is called when the user scrolls to the bottom of the page. This function will make an AJAX call to the load-post.php file and pass the offset value as a parameter. 
+The load-post.php file will then get the next set of posts from the database and return them in JSON format. The loadMore() function will then use this data to generate HTML code for each post and append it to the #post-wall element.
+
+7. The offset variable is updated to reflect the number of posts that have been loaded so far.
+
+8. The newOffset variable is used to update the $_SESSION['offset'] variable. This is done so that when the user refreshes the page, the posts that have already been loaded will not be loaded again. */
 	</script>
 
 	<style>
@@ -262,6 +294,15 @@ $trueOR = true;
 			echo "</div>";
 		}
 		$trueOR = true;
+
+		/* The explanation for the code above:
+1. The first foreach loop is to display posts, so it is looping through the post array
+
+2. The first if statement is to check if the user is the owner of the post or not, if the user is the owner of the post then the user can edit the post by clicking on the edit post link
+
+3. The second foreach loop is to display comments, so it is looping through the comment array
+
+4. The second if statement is to check if the user is the owner of the comment or not, if the user is the owner of the comment or the post then the user can delete the comment by clicking on the delete comment link */
 		?>
 	</div>
 	</div>

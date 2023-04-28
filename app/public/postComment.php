@@ -1,4 +1,19 @@
 <?php
+/* 
+1. Start the session.
+
+2. Set the timezone for the session.
+
+3. Check if the user is logged in or not.
+
+4. Check if the pid is set or not.
+
+5. Set the pid in the session.
+
+6. Require the apiHub.php file which is in the mainApiLogic folder.
+
+7. If the message is set then unserialize it and set it in the ErrArr variable. */
+
 session_start();
 date_default_timezone_set('Europe/Copenhagen');
 
@@ -20,6 +35,27 @@ if (isset($_GET['message'])) {
 ?>
 
 <!DOCTYPE html>
+<!-- Here is the explanation for the code above:
+
+1. The user is able to view the post and comments on it.
+
+2. When the user clicks on the “Logout” button they will be logged out and redirected to the login page.
+
+3. When the user clicks on the “Back to Frontpage” button they will be redirected to the frontpage.
+
+4. When the user clicks on the “Publish comment” button their comment will be published.
+
+5. The user is able to see the time in the top right corner.
+
+6. The user is able to see the post title, content, images, and the user who posted it.
+
+7. The user is able to see the comment content and the user who posted it.
+
+8. If the user does not enter any comment content, an error message will be displayed.
+
+9. The user is able to see the date and time the comment was posted.
+
+10. The user is able to see the date and time the post was posted. -->
 <html lang="en">
 
 
@@ -60,55 +96,7 @@ if (isset($_GET['message'])) {
 		echo "<p><strong>{$post['uid']}</strong> posted on {$post['date']}</p>";
 		echo "</div>";
 		?>
-
-
-
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			var offset = 4;
-			var limit = 1;
-			var loading = false;
-
-			$(window).scroll(function() {
-
-
-				if ($(window).scrollTop() >= $(document).height() - $(window).height() - 2) {
-
-					loadMore();
-
-				}
-			});
-
-			function loadMore() {
-				if (!loading) {
-
-					loading = true;
-					$.getJSON('load-comment.php', {
-						offset: offset
-					}, function(data) {
-						console.log(data);
-						if (data.length > 0) {
-							$.each(data, function(i, comment) {
-								var html = '<div class="comment">';
-								html += '<h2 class="text-2xl font-bold py-2 border-b-2 border-gray-200 mb-4 lg:mb-8">' + comment.uid + '</h2>';
-								html += '<p>' + comment.content + '</p>';
-								html += '<br>';
-								html += '<p>posted on ' + comment.date + '</p>';
-								html += '<br>';
-								html += '</div>';
-								$('#comment-wall').append(html);
-
-							});
-							offset += limit;
-						} else {
-							loading = false;
-						}
-
-					});
-
-				}
-			}
-		</script>
+	</body>
 </div>
 
 <style>

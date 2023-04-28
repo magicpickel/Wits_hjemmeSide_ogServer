@@ -1,3 +1,13 @@
+<!-- Here is the explanation for the code above:
+1. The form is submitted to the registerLogic.php file on the server
+
+2. The form is validated on the server
+
+3. If the form is validated correctly, the user is redirected to the login page
+
+4. If the form is not validated correctly, the user is redirected to the register page and an error message is displayed
+ -->
+
 <?php
 session_start();
 date_default_timezone_set('Europe/Copenhagen');

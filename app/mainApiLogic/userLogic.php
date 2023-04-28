@@ -1,5 +1,14 @@
 <?php
 
+/* 
+1. The User class is the main class of this program. It is used to create a new user and check if the user is already in the database.
+2. The constructor function is used to initialize the values of the class variables.
+3. The createU() function is used to create a new user.
+4. The get_uidList() function is used to get the list of users.
+5. The get_StoreUid_paswor() function is used to get the list of users and their passwords.
+6. The doseUserEx() function is used to check if the user is already in the database.
+7. The itItcorretLogin() function is used to check if the user’s password is correct. */
+
 require_once(dirname(__DIR__).'/dataBeseLogic/dataBaseUsers.php');
 require_once(dirname(__DIR__).'/dataBeseLogic/dataBaseUserP.php');
 class User
