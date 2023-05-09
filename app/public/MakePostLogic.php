@@ -285,6 +285,7 @@ if (!$ErrT_F) {
     unset($_SESSION['imgUrlT']);
     unset($_SESSION['contentT']);
     unset($_SESSION['editPost']);
+    unset($_SESSION['ofset']);
     header("Location: dashBoard.php");
     exit();
 }

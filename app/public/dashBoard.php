@@ -3,7 +3,7 @@
 session_start();
 date_default_timezone_set('Europe/Copenhagen');
 if (!isset($_SESSION['offset'])) {
-	$_SESSION['offset'] = 5;
+	$_SESSION['offset'] = 4;
 
 	$ofset = $_SESSION['offset'];
 } else {
@@ -37,7 +37,7 @@ if (isset($_GET['editPost']) && $_GET['editPost'] == 'false') {
 require_once(dirname(__DIR__) . '/mainApiLogic/apiHub.php');
 $userS = $_SESSION['user'];
 $trueOR = true;
-//var_dump($_SESSION['editPost']);
+var_dump($_SESSION['offset']);
 
 /* The code above does the following:
 1. Starts a session
@@ -132,7 +132,7 @@ $trueOR = true;
 
 				loading = true;
 				$.getJSON('load-post.php', {
-					offset: offset
+					offset: offset+1
 				}, function(data) {
 					if (data.length > 0) {
 						$.each(data, function(i, post) {
