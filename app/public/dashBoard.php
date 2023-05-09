@@ -37,7 +37,7 @@ if (isset($_GET['editPost']) && $_GET['editPost'] == 'false') {
 require_once(dirname(__DIR__) . '/mainApiLogic/apiHub.php');
 $userS = $_SESSION['user'];
 $trueOR = true;
-var_dump($_SESSION['offset']);
+//var_dump($_SESSION['offset']);
 
 /* The code above does the following:
 1. Starts a session
