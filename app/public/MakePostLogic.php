@@ -39,7 +39,7 @@ if ($_SESSION['editPost'] == 'true') {
         foreach ($_SESSION['iidsTp'] as $key2 => $value2) {
             if ($value == $value2) {
                 unset($_SESSION['iidsTp'][$key2]);
-                sort($_SESSION['iidsTp']);
+                sort($_SESSION['iidsTp'],SORT_NATURAL);
                 unset($_POST['imgUrl'][$key]);
             }
         }

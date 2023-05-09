@@ -3,7 +3,7 @@
 session_start();
 date_default_timezone_set('Europe/Copenhagen');
 if (!isset($_SESSION['offset'])) {
-	$_SESSION['offset'] = 4;
+	$_SESSION['offset'] = 5;
 
 	$ofset = $_SESSION['offset'];
 } else {

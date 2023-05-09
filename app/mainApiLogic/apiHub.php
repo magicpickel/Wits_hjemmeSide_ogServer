@@ -235,7 +235,7 @@ function delete_attachment(int $pid, int $iid)
     $files = array_diff($files, array('.', '..'));
 
 
-    sort($files);
+    sort($files,SORT_NATURAL);
 
 
     $indexToDelete = array_search($fileToDelete, $files);
@@ -303,7 +303,8 @@ function delete_comment($cid)
     $fileToDelete = $cid . '.txt';
     $files = scandir($dir);
     $files = array_diff($files, array('.', '..'));
-    sort($files);
+    sort($files,SORT_NATURAL);
+    
     $indexToDelete = array_search($fileToDelete, $files);
     //unset($files[$indexToDelete]);
     foreach ($files as $index => $file) {
