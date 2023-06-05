@@ -472,3 +472,47 @@
 2023/06/05 11:21:06 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
 2023/06/05 11:21:06 [notice] 1#1: OS: Linux 5.15.90.1-microsoft-standard-WSL2
 2023/06/05 11:21:06 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/06/05 11:21:06 [notice] 1#1: start worker processes
+2023/06/05 11:21:06 [notice] 1#1: start worker process 29
+2023/06/05 11:21:06 [notice] 1#1: start worker process 30
+2023/06/05 11:21:06 [notice] 1#1: start worker process 31
+2023/06/05 11:21:06 [notice] 1#1: start worker process 32
+2023/06/05 11:21:06 [notice] 1#1: start worker process 33
+2023/06/05 11:21:06 [notice] 1#1: start worker process 34
+2023/06/05 11:21:06 [notice] 1#1: start worker process 35
+2023/06/05 11:21:06 [notice] 1#1: start worker process 36
+2023/06/05 11:21:06 [notice] 1#1: start worker process 37
+2023/06/05 11:21:06 [notice] 1#1: start worker process 38
+2023/06/05 11:21:06 [notice] 1#1: start worker process 39
+2023/06/05 11:21:06 [notice] 1#1: start worker process 40
+2023/06/05 13:54:57 [error] 29#29: *29 open() "/app/public/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:57 [error] 29#29: *29 open() "/app/public/blog/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //blog/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:58 [error] 29#29: *29 open() "/app/public/web/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //web/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:58 [error] 29#29: *29 open() "/app/public/wordpress/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wordpress/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:58 [error] 29#29: *29 open() "/app/public/website/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //website/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:58 [error] 29#29: *29 open() "/app/public/wp/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wp/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:58 [error] 29#29: *29 open() "/app/public/news/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //news/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:59 [error] 29#29: *29 open() "/app/public/2020/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //2020/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:59 [error] 29#29: *29 open() "/app/public/2019/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //2019/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:59 [error] 29#29: *29 open() "/app/public/shop/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //shop/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:54:59 [error] 29#29: *29 open() "/app/public/wp1/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wp1/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:55:00 [error] 29#29: *29 open() "/app/public/test/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //test/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:55:00 [error] 29#29: *29 open() "/app/public/wp2/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wp2/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:55:00 [error] 29#29: *29 open() "/app/public/site/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //site/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:55:00 [error] 29#29: *29 open() "/app/public/cms/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //cms/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 13:55:01 [error] 29#29: *29 open() "/app/public/sito/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //sito/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:35 [error] 29#29: *44 open() "/app/public/wp-includes/ID3/license.txt" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wp-includes/ID3/license.txt HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:35 [error] 29#29: *44 "/app/public/feed/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //feed/ HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:36 [error] 29#29: *44 open() "/app/public/blog/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //blog/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:36 [error] 29#29: *44 open() "/app/public/web/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //web/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:37 [error] 29#29: *44 open() "/app/public/wordpress/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wordpress/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:38 [error] 29#29: *44 open() "/app/public/wp/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wp/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:38 [error] 29#29: *44 open() "/app/public/2020/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //2020/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:39 [error] 29#29: *44 open() "/app/public/2019/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //2019/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:39 [error] 29#29: *44 open() "/app/public/2021/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //2021/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:39 [error] 29#29: *44 open() "/app/public/shop/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //shop/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:40 [error] 29#29: *44 open() "/app/public/wp1/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //wp1/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:40 [error] 29#29: *44 open() "/app/public/test/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //test/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:41 [error] 29#29: *44 open() "/app/public/site/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //site/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:41 [error] 29#29: *44 open() "/app/public/cms/wp-includes/wlwmanifest.xml" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET //cms/wp-includes/wlwmanifest.xml HTTP/1.1", host: "helloworld2.net"
+2023/06/05 14:59:48 [error] 29#29: *44 open() "/app/public/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "helloworld2.net", referrer: "https://helloworld2.net/"

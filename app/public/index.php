@@ -1,12 +1,13 @@
+<?php
+session_start();
+date_default_timezone_set('Europe/Copenhagen');
+?>
 <!doctype html>
 <!-- 
 1. The code starts with a html form that brings you to the loginLogic.php file when you press login. It also includes a link to the dashboard page without login.
 2. It then includes a script that shows the time in the top right corner.
 3. The rest of the code is a form where you can login or create a new user. The form uses tailwind css to make it look good.
 4. The form is then closed and the html is closed. -->
-<?php
-date_default_timezone_set('Europe/Copenhagen');
-?>
 <html>
 
 <head>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+date_default_timezone_set('Europe/Copenhagen');
+?>
+<!doctype html>
+<html>
 <!-- Here is the explanation for the code above:
 1. The form is submitted to the registerLogic.php file on the server
 
@@ -7,14 +13,6 @@
 
 4. If the form is not validated correctly, the user is redirected to the register page and an error message is displayed
  -->
-
-<?php
-session_start();
-date_default_timezone_set('Europe/Copenhagen');
-?>
-<!doctype html>
-<html>
-
 <head>
     <meta charset="UTF-8">
     <meta username="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +29,7 @@ date_default_timezone_set('Europe/Copenhagen');
     if (isset($_GET["message"])) {
         $ErrArr = unserialize($_GET["message"]);
     }
-
+   
     ?>
     <form action="registerLogic.php" method="post">
         <div class="bg-gray-100">
